@@ -39,3 +39,19 @@ enum PatchSize {
   SMALL
   LARGE
 }
+
+// Mutations
+
+type Mutation {
+  bookTrips(LaunchIds: [ID]!): TripUpdateResponse!
+
+  cancelTrip(launchId: ID!): TripUpdateResponse!
+
+  login(email: String): String
+}
+
+type TripUpdateResponse {
+  success: Boolean!
+  message: String
+  launches: [Launch]
+}
